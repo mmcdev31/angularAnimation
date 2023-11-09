@@ -1,0 +1,25 @@
+<div class="container d-flex flex-row flex-justify-content-center">
+  <button (click)="state = 'normal'" class="btn btn-primary m-20">
+    normal
+  </button>
+  <button (click)="state = 'wild'" class="btn btn-primary m-20">wild</button>
+</div>
+<div class="w-100 d-flex flex-row flex-justify-content-center">
+  <div [@square]="state" class="square"></div>
+  <div [@square2]="state" class="square"></div>
+  <div [@square3]="state" class="square"></div>
+</div>
+<div class="w-100 d-flex flex-row flex-justify-content-center">
+  <ul
+    *ngIf="display"
+    @list
+    (@list.start)="toogle($event)"
+    (@list.done)="toogle($event)"
+  >
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum dolor sit amet</li>
+  </ul>
+</div>
